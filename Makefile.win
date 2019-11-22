@@ -1,0 +1,58 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Draw.o main.o Timer.o Core.o SelectMode.o MatrixMode.o VectorMode.o BoolMode.o Matrix.o Vector.o Bool.o
+LINKOBJ  = Draw.o main.o Timer.o Core.o SelectMode.o MatrixMode.o VectorMode.o BoolMode.o Matrix.o Vector.o Bool.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Draw.o: Draw.cpp
+	$(CPP) -c Draw.cpp -o Draw.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Timer.o: Timer.cpp
+	$(CPP) -c Timer.cpp -o Timer.o $(CXXFLAGS)
+
+Core.o: Core.cpp
+	$(CPP) -c Core.cpp -o Core.o $(CXXFLAGS)
+
+SelectMode.o: SelectMode.cpp
+	$(CPP) -c SelectMode.cpp -o SelectMode.o $(CXXFLAGS)
+
+MatrixMode.o: MatrixMode.cpp
+	$(CPP) -c MatrixMode.cpp -o MatrixMode.o $(CXXFLAGS)
+
+VectorMode.o: VectorMode.cpp
+	$(CPP) -c VectorMode.cpp -o VectorMode.o $(CXXFLAGS)
+
+BoolMode.o: BoolMode.cpp
+	$(CPP) -c BoolMode.cpp -o BoolMode.o $(CXXFLAGS)
+
+Matrix.o: Matrix.cpp
+	$(CPP) -c Matrix.cpp -o Matrix.o $(CXXFLAGS)
+
+Vector.o: Vector.cpp
+	$(CPP) -c Vector.cpp -o Vector.o $(CXXFLAGS)
+
+Bool.o: Bool.cpp
+	$(CPP) -c Bool.cpp -o Bool.o $(CXXFLAGS)
